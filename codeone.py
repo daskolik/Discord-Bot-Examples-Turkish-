@@ -70,12 +70,38 @@ class SelectView(discord.ui.View):
     def __init__(self, *, timeout = 180):
         super().__init__(timeout=timeout)   
         self.add_item(Select())
+        
+class Select(discord.ui.Select):
+    def __init__(self):
+        options=[
+            discord.SelectOption(label="kolik#1337",emoji="👌",description="Hakkında"),
+            discord.SelectOption(label="! E İ",emoji="✨",description="Hakkında"),
+            discord.SelectOption(label="ASDF_ASD",emoji="🎭",description="Hakkında")
+            ]       
+        super().__init__(placeholder="Select an option",max_values=1,min_values=1,options=options)
+    async def callback(self, interaction: discord.Interaction):
+        if self.values[0] == "kolik#1337":
+            await interaction.response.send_message(content="Skyline BOT un geliştiricisi ve Senior GFX Developer",ephemeral=True)
+        elif self.values[0] == "! E İ":
+            await interaction.response.send_message("sunucu sahibi",ephemeral=True)
+        elif self.values[0] == "ASDF_ASD":
+            await interaction.response.send_message("animeizleyen scripter",ephemeral=True)
+
+class SelectView(discord.ui.View):
+    def __init__(self, *, timeout = 180):
+        super().__init__(timeout=timeout)   
+        self.add_item(Select())        
 @client.command()
 async def ekip(ctx):
     await ctx.send("İncelemek için tıkla!",view=SelectView(),ephemeral=True)
 @client.command()
 async def kolik(ctx):
-    await ctx.send("amınakodumun topu")
-   
+    await ctx.send("heloworld")
+@client.tree.command(name="nyancatt", description="example")
+async def nyancatt(interaction: discord.Interaction):
+    await interaction.response.send_message(content="meav meow. dog")   
+@client.tree.command(name="slashhy", description="example")
+async def slashhy(interaction: discord.Interaction):
+    await interaction.response.send_message(content="biggest codeeeee")   
 
 client.run(bottoken)
