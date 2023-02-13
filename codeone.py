@@ -13,7 +13,7 @@ tarihsaat = datetime.datetime.now()
 intentts = discord.Intents(messages=True, guilds=True, reactions=True, members=True, presences=True, message_content=True)
 client = commands.Bot(command_prefix='.sk ', intents=intentts)
 
-bottoken = 'MTA3MzMzNDczMDk1MjU1MjYyMA.GfVDkX.30qYqM8WiO8LgznBcaFzNdDZ85mRvLdO9Y_-Mk'
+bottoken = 'bot token is gone here'
 @client.event
 async def on_ready():
 
