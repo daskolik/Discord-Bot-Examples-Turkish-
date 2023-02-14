@@ -45,7 +45,7 @@ async def on_member_remove(member):
 @client.tree.command(name="aboutbot", description="Bot hakkında genel bilgi.")
 async def aboutbot(interaction: discord.Interaction):
     await interaction.response.send_message(content="skyline bot v0.0.2 # developed by kolik#1337")
-@client.tree.command(name="azureee", description="cenabet azure kardeşimiz için bir komut")
+@client.tree.command(name="azureee", description="johncenabet")
 async def azureee(interaction: discord.Interaction):
     await interaction.response.send_message(content="namaz kıl. cünüb gezme")
 
